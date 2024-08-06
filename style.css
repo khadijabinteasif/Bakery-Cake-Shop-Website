@@ -1,0 +1,289 @@
+/* General styles */
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #f8f5f2;  /* Light beige color */
+    color: #5e3b2c; /* Dark brown color */
+}
+
+.navbar {
+    background-color: #5e3b2c; 
+}
+
+.navbar-brand {
+    font-size: 2.5rem;
+    color: #f8f5f2 !important; 
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    align-items: center; 
+}
+
+.navbar-brand img {
+    height: 2.5rem; 
+    margin-right: 10px; 
+}
+
+.nav-link {
+    color: #f8f5f2 !important; 
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #a38b7c !important; 
+}
+
+.navbar-toggler {
+    border-color: #f8f5f2;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23f8f5f2' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.form-control {
+    border: 1px solid #f8f5f2;
+    color: #5e3b2c;
+    background-color: #f8f5f2;
+}
+
+.btn-outline-success {
+    color: #f8f5f2;
+    border-color: #f8f5f2;
+}
+
+.btn-outline-success:hover {
+    background-color: #f8f5f2;
+    color: #5e3b2c;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+.icon:hover {
+    filter: brightness(1.5); 
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); 
+}
+
+.footer {
+    background-color: #5e3b2c;
+    color: #f8f5f2;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+}
+.carousel-caption {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f8f5f2;
+    font-size: 6rem;
+    font-family: 'Playfair Display', serif;
+    padding: 10px;
+    border-radius: 10px;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* Styles specific to home.html */
+.carousel-inner img {
+    height: 500px;
+}
+
+.welcome-section h1 {
+    font-size: 3rem;
+    margin-top: 20px;
+}
+
+.welcome-section p {
+    font-size: 1.2rem;
+}
+
+.bg2 {
+    background-color: #a38b7c;
+    padding: 50px 0;
+}
+
+.bg3 {
+    background-color: #f8f5f2; 
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.bg3:hover {
+    background-color: #5e3b2c; 
+    color: #f8f5f2; 
+}
+
+.bg3 img {
+    max-width: 100%;
+    height: auto;
+}
+
+.customer-reviews img, .welcome-section img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.customer-reviews img:hover, .welcome-section img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(139, 69, 19, 0.8); 
+}
+
+.bg3:not(:last-child) {
+    margin-right: 10px; 
+}
+
+/* Styles specific to about.html */
+.btn-contact {
+    background-color: #5e3b2c; 
+    border-color: #5e3b2c;
+    color: #f8f5f2; 
+}
+
+.btn-contact:hover {
+    background-color: #5e3b2c;
+    border-color: #f8f5f2;
+    color: #5e3b2c; 
+}
+
+.about-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px; 
+}
+
+/* Styles shared across menu.html, brownies.html, cakes.html, cupcakes.html, cookies.html, desserts.html */
+.product-card {
+    margin: 10px 0;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.card-title {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.card-text {
+    font-size: 0.9em;
+}
+
+.btn-primary {
+    background-color: #5e3b2c;
+    border-color: #5e3b2c;
+}
+
+.menu-section {
+    padding: 20px 0;
+}
+
+.categories button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.categories button:hover {
+    background-color: #a38b7c;
+    border-color: #a38b7c;
+    color: white;
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Styles specific to contact.html */
+.map-container {
+    position: relative;
+    width: 90%;
+    height: 600px; 
+    margin: auto; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Styles specific to login.html */
+.login-form .form-control {
+    border: 1px solid #5e3b2c;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.btn-brown {
+    background-color: #5e3b2c;
+    color: #f8f5f2;
+}
+
+.btn-brown:hover {
+    background-color: #4b2e23;
+    color: #f8f5f2;
+}
+
+.login-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    animation: slideDown 0.5s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styles specific to cart.html */
+.cart-table th {
+    background-color: #5e3b2c;
+    color: white;
+}
+
+.cart-table td {
+    background-color: #f8f5f2;
+}
+
+.cart-total {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #5e3b2c;
+}
+
+.btn-primary:hover {
+    background-color: #4b2e23;
+    border-color: #4b2e23;
+}
+

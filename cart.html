@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Kakes Bakery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#"><img src="logo.jpg" alt="Logo" ><span> <h1> <b> Kakes</b> </h1></span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="menu.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        <div class="d-flex align-items-center">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search any item">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <a href="login.html"><img src="login.jpg" alt="Login" class="icon"></a>
+<a href="cart.html"><img src="cart.jpg" alt="Cart" class="icon"></a>
+</div>
+</nav>
+
+<!-- Cart Content -->
+<div class="container mt-5">
+    <h1><b><i>Cart</i></b></h1><br>
+    <table class="table cart-table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+        </tbody>
+    </table>
+    <div class="text-right">
+        <span class="cart-total">Total: Rs <span id="cart-total">0</span></span>
+    </div>
+    <div class="text-right mt-3">
+        <button class="btn btn-primary" id="confirm-order">Confirm Order</button>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br>
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2024 Kakes Bakeshop. All rights reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function() {
+    function loadCart() {
+        $.getJSON('get_cart_items.php', function(data) {
+            var cartItems = '';
+            var total = 0;
+            $.each(data, function(key, item) {
+                var itemTotal = item.price * item.quantity;
+                cartItems += '<tr><td>' + item.product_name + '</td><td>' + item.price + '</td><td>' + item.quantity + '</td><td>' + itemTotal + '</td></tr>';
+                total += itemTotal;
+            });
+            $('#cart-items').html(cartItems);
+            $('#cart-total').text(total);
+        });
+    }
+
+    $('#confirm-order').click(function() {
+        $.post('confirm_order.php', function(data) {
+            var result = JSON.parse(data);
+            alert('Order confirmed! Total: Rs ' + result.total);
+            loadCart();
+        });
+    });
+
+    loadCart();
+});
+</script>
+</body>
+</html>
+
